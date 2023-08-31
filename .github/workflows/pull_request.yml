@@ -1,4 +1,4 @@
-name: mev-share-java pull request CI
+name: aa-bundler-java pull request CI
 
 on:
   pull_request:
@@ -20,9 +20,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Execute Gradle build
-        env:
-          SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
-          GOERLI_RPC_URL: ${{ secrets.GOERLI_RPC_URL }}
         run: ./gradlew build
 
   windows:
@@ -41,9 +38,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Execute Gradle build
-        env:
-          SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
-          GOERLI_RPC_URL: ${{ secrets.GOERLI_RPC_URL }}
         run: ./gradlew build
 
   linux:
@@ -62,9 +56,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Execute Gradle build
-        env:
-          SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
-          GOERLI_RPC_URL: ${{ secrets.GOERLI_RPC_URL }}
         run: ./gradlew build
 
       - name: Generate JaCoCo Badge

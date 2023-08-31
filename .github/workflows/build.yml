@@ -1,4 +1,4 @@
-name: mev-share-java CI
+name: aa-bundler-java CI
 
 on:
   push:
@@ -39,7 +39,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Execute Gradle build
-        env:
         run: ./gradlew build
 
   linux:
